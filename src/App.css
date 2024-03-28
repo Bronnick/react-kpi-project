@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.table-content ul {
+    list-style-type: none;
+}
+
+.table-item {
+  display: inline-block;
+}
+
+.selected-table {
+  border: 3px solid black;
+}
+
+.table-photo{
+  width: 200px;
+  height: 200px;
+}
