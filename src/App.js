@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import { TableSelector } from './ui_components/TableSelector.jsx';
+import { DateTimeSelector } from './ui_components/DateTimeSelector.jsx';
+import { Menu } from './ui_components/Menu.jsx';
+import { OrderButton } from './ui_components/OrderButton.jsx';
 
 function App() {
   return (
@@ -23,6 +26,12 @@ function App() {
 
     <div className='App'>
         <TableSelector />
+
+        <DateTimeSelector />
+
+        <Menu />
+
+        <OrderButton />
     </div>
   );
 }

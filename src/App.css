@@ -43,13 +43,29 @@
 
 .table-item {
   display: inline-block;
+  padding: 3px;
+  box-sizing:border-box;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: aquamarine;
+  border-radius: 5px;
 }
 
 .selected-table {
   border: 3px solid black;
+  padding: 0px;
 }
 
 .table-photo{
   width: 200px;
   height: 200px;
+}
+
+.order-button {
+  font-family:'Courier New', Courier, monospace;
+  background-color: black;
+  border-radius: 7px;
+  font-size: 48px;
+  margin: 20px;
+  color: white;
 }
