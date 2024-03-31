@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios';
 
 const dishes = [
     {
@@ -42,8 +43,21 @@ function MenuItem(props) {
 }
 
 export function Menu() {
-    
-    const [className, setClassName] = React.useState('disabled-link')
+
+    const [tables, setTables] = useState([]);
+
+    useEffect(() => {
+        // Виконання HTTP-запиту до фейкового API
+        axios.get('http://localhost:3001/dishes')
+        .then(response => {
+        // Оновлення стану cars з отриманими даними
+        setTables(response.data);
+        })
+        .catch(error => {
+        // Обробка помилки, якщо запит не вдалося виконати
+        console.error('Помилка отримання даних з API:', error);
+        });
+        }, []);
 
     return (
         <div className='table-content'>

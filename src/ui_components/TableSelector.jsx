@@ -1,20 +1,21 @@
 import '../App.css';
 import './table2.jpg'
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-const tables = [
-    {
-        id: 1,
-        photo: './table2.jpg',
-        className: 'selected-table'
-    },
-    {
-        id: 3,
-        photo: './table3.jpg',
-        className: ''
-    }
-]
+// const tables = [
+//     {
+//         id: 1,
+//         photo: './table2.jpg',
+//         className: 'selected-table'
+//     },
+//     {
+//         id: 3,
+//         photo: './table3.jpg',
+//         className: ''
+//     }
+// ]
 
 function Table(props) {
 
@@ -47,6 +48,21 @@ function Table(props) {
 const TableSelector = () => {
     //const table = tables[0];
     const alt = "photo";
+
+    const [tables, setTables] = useState([]);
+
+    useEffect(() => {
+        // Виконання HTTP-запиту до фейкового API
+        axios.get('http://localhost:3001/tables')
+        .then(response => {
+        // Оновлення стану cars з отриманими даними
+        setTables(response.data);
+        })
+        .catch(error => {
+        // Обробка помилки, якщо запит не вдалося виконати
+        console.error('Помилка отримання даних з API:', error);
+        });
+        }, []);
 
     const [selected, setSelected] = React.useState(1);
 

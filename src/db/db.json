@@ -1,0 +1,34 @@
+{
+    "tables" : [
+        {
+            "id": 1,
+            "photo": "./table2.jpg",
+            "className": "selected-table"
+        },
+        {
+            "id": 3,
+            "photo": "./table3.jpg",
+            "className": ""
+        }
+    ],
+    "dishes" : [
+        {
+            "photo": "./pizza.jpg",
+            "name": "pizza",
+            "price": 200,
+            "className": "selected-table"
+        },
+        {
+            "photo": "./salad.jpg",
+            "name": "salad",
+            "price": 300,
+            "className": ""
+        },
+        {
+            "photo": "./soup.jpg",
+            "name": "soup",
+            "price":100,
+            "className": ""
+        }
+    ]
+}
