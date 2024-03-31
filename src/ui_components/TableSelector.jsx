@@ -1,6 +1,7 @@
 import '../App.css';
 import './table2.jpg'
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const tables = [
     {
@@ -43,13 +44,11 @@ function Table(props) {
     </li>)
 }
 
-export function TableSelector() {
+const TableSelector = () => {
     //const table = tables[0];
     const alt = "photo";
 
     const [selected, setSelected] = React.useState(1);
-
-    
 
     return (
         <div className='table-content'>
@@ -59,6 +58,16 @@ export function TableSelector() {
                 )
                 }
             </ul>
+            <Link to="/main" >
+                <button className="nav-button">
+                    Back
+                </button>
+            </Link>
+            <Link to="/date_time_selection" >
+                <button className="nav-button">
+                    Next
+                </button>
+            </Link>
         </div>
     )
     
@@ -68,3 +77,5 @@ export function TableSelector() {
     //     })
     // }
 }
+
+export default TableSelector;

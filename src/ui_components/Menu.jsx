@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const dishes = [
     {
@@ -42,6 +43,7 @@ function MenuItem(props) {
 
 export function Menu() {
     
+    const [className, setClassName] = React.useState('disabled-link')
 
     return (
         <div className='table-content'>
@@ -57,6 +59,17 @@ export function Menu() {
                 )
                 }
             </ul>
+
+            <Link to="/date_time_selection" >
+                <button className="nav-button">
+                    Back
+                </button>
+            </Link>
+            <Link to="/success" >
+                <button className="nav-button">
+                    Next
+                </button>
+            </Link>
         </div>
     )
 }
